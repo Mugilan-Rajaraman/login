@@ -1,0 +1,32 @@
+body{
+    --color-primary: rgb(40, 95, 190);
+    --color-primary-dark: rgb(20, 54, 110);
+    --color-secondary: rgb(145,148,220);
+    --color-secondary-dark: rgb(60, 61, 98);
+    --color-error:#cc3333;
+    --color-success: #4bb544;
+}
+
+
+
+.form__button-error{
+        width: 100%;
+        padding: 1rem 2rem;
+        font-weight: bold;
+        font-size: 1.1rem;
+        color: #ffffff;
+        border: none;
+        border-radius: var(--border-radius);
+        outline: none;
+        cursor: pointer;
+        background: linear-gradient(to right,rgb(90, 0, 0), var(--color-error)) 
+}
+
+
+.form__button-error:hover{
+    background: linear-gradient(to right, rgb(179, 0, 0),rgb(255, 64, 64));
+}
+
+.form__button-error:active{
+    transform: scale(0.98);
+}
