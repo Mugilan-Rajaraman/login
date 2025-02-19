@@ -171,6 +171,7 @@ function Signup({ toggleForm }) {
   
   return (
     
+
     <div className="signupform">
     <div className="container">
       <form onSubmit={handleSubmit(onSubmitSignUp)} className="form" id="signup">
