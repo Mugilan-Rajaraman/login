@@ -177,7 +177,7 @@ function Signup({ toggleForm }) {
         <h1 className="form__title">Sign Up</h1>
         <div className="form__input-group">
           <input {...register("signupemail" , {required: "Email cannot be blank",
-            pattern : {value: emailRegex, message: "Email be Valid" }
+            pattern : {value: emailRegex, message: "Email must be Valid" }
           })} name="signupemail"type="text" className={`form__input ${errors.signupemail ? "form__input--error" : ""}`}  placeholder="Email" />
           <div className="form__input-error-message">{errors.signupemail?.message}</div>
         </div>
