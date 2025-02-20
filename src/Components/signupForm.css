@@ -26,9 +26,9 @@ html, body{
 }
 
 .container{
-    width: 400px;
+    width: 500px;
     
-    max-width: 400px;
+    max-width: 500px;
     margin: 1rem;
     padding: 2rem;
     box-shadow: 0 0 40px rgba(0,0,0,0.2);
@@ -158,3 +158,40 @@ select:invalid{
     color: gray;
 }
 
+.form__row{
+    display:flex ;
+    gap: 1rem
+}
+
+
+.form__row .form__input-group {
+    flex: 1; 
+}
+
+.form__input-label {
+    margin-bottom: 100px;
+}
+
+.m3 {
+    margin-top: 0.3rem;
+}
+
+.defaultsignup{
+    position: absolute;
+    top: 65%;
+    right: 0.50rem; /* Adjust as needed */
+    transform: translateY(-35%);
+    cursor: pointer;
+    background: none;
+    border: none; 
+}
+
+.errorsignup{
+    position: absolute;
+    top: 47.5%;
+    right: 0.50rem; /* Adjust as needed */
+    transform: translateY(-35%);
+    cursor: pointer;
+    background: none;
+    border: none; 
+}

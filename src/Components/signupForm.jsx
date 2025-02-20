@@ -170,64 +170,78 @@ function Signup({ toggleForm }) {
   
   
   return (
-    
+
 
     <div className="signupform">
     <div className="container">
       <form onSubmit={handleSubmit(onSubmitSignUp)} className="form" id="signup">
         <h1 className="form__title">Sign Up</h1>
         <div className="form__input-group">
+         <label className="form__input-label">Email Address</label>
           <input {...register("signupemail" , {required: "Email cannot be blank",
             pattern : {value: emailRegex, message: "Email must be Valid" }
-          })} name="signupemail"type="text" className={`form__input ${errors.signupemail ? "form__input--error" : ""}`}  placeholder="Email" />
+          })} name="signupemail"type="text" className={`m3 form__input ${errors.signupemail ? "form__input--error" : ""}`}  placeholder="Email Address" />
           <div className="form__input-error-message">{errors.signupemail?.message}</div>
+        </div>
+        <div className="form__row">
+        <div className="form__input-group">
+        <label className="form__input-label">Parent First Name</label>
+          <input { ...register("signuppfname", {
+            required: "Parent First name is required"
+          })}name="signuppfname" type="text" className={`m3 form__input ${errors.signuppfname ? "form__input--error" : ""}`} placeholder="Parent First Name" />
+          <div className="form__input-error-message">{errors.signuppfname?.message}</div>
+          
+        </div>
+        <div className="form__input-group">
+        <label className="form__input-label">Parent Last Name</label>
+          <input { ...register("signupplname", {
+            required: "Parent Last name is required"
+          })} name="signupplname" type="text" className={`m3 form__input ${errors.signupplname ? "form__input--error" : ""}`} placeholder="Parent Last Name" />
+          <div className="form__input-error-message">{errors.signupplname?.message}</div>
+        </div>
         </div>
         <div className="form__input-group">
           <div className="form__input-wrapper">
+          <label className="form__input-label">Password</label>
           <input {...register("signuppassword", {
             required : "Password cannot be blank",
             pattern: {value: passwordRegex, message: "Minimum 15 characters, 1 number, 1 special character is required"}
-          })} name="signuppassword" type={showPassword} className={`form__input ${errors.signuppassword ? "form__input--error" : ""}`}  placeholder="Password" />
+          })} name="signuppassword" type={showPassword} className={`m3 form__input ${errors.signuppassword ? "form__input--error" : ""}`}  placeholder="Password" />
           <div className="toggle__input-group">
-            <button className = {`default ${errors.signuppassword ? "error" : ""}`} type="button" onClick={setShowPassword}>{iconSwitch ?<IoMdEye className="Eye"/> : <IoMdEyeOff className="Eye"/>}</button>
+            <button className = {`defaultsignup ${errors.signuppassword ? "errorsignup" : ""}`} type="button" onClick={setShowPassword}>{iconSwitch ?<IoMdEye className="Eye"/> : <IoMdEyeOff className="Eye"/>}</button>
 
           </div>
           <div className="form__input-error-message">{errors.signuppassword?.message}</div>
           </div>
         </div>
         <div className="form__input-group">
+        <label className="form__input-label">Confirm Password</label>
           <input {...register("signupconfpassword", {
             required : "Confirm Password cannot be blank",
             validate : (val) =>{if (watch("signuppassword") !=val){return "Your passwords don't match"}}
-          })} id= "confirmpassword" name="signupconfpassword" type="password" className={`form__input ${errors.signupconfpassword ? "form__input--error" : ""}`} placeholder="Confirm Password"/>
+          })} id= "confirmpassword" name="signupconfpassword" type="password" className={`m3 form__input ${errors.signupconfpassword ? "form__input--error" : ""}`} placeholder="Confirm Password"/>
           <div className="form__input-error-message">{errors.signupconfpassword?.message}</div>
         </div>
+        <h2 className="form__title">Student</h2>
+        <div className="form__row">
         <div className="form__input-group">
-          <input { ...register("signuppfname", {
-            required: "Parent First name is required"
-          })}name="signuppfname" type="text" className={`form__input ${errors.signuppfname ? "form__input--error" : ""}`} placeholder="Parent First Name" />
-          <div className="form__input-error-message">{errors.signuppfname?.message}</div>
-        </div>
-        <div className="form__input-group">
-          <input { ...register("signupplname", {
-            required: "Parent Last name is required"
-          })} name="signupplname" type="text" className={`form__input ${errors.signupplname ? "form__input--error" : ""}`} placeholder="Parent Last Name" />
-          <div className="form__input-error-message">{errors.signupplname?.message}</div>
-        </div>
-        <div className="form__input-group">
+        <label className="form__input-label">Student First Name</label>
           <input { ...register("signupsfname", {
             required: "Student First name is required"
-          })} name="signupsfname" type="text" className={`form__input ${errors.signupsfname ? "form__input--error" : ""}`} placeholder="Student First Name" />
+          })} name="signupsfname" type="text" className={`m3 form__input ${errors.signupsfname ? "form__input--error" : ""}`} placeholder="Student First Name" />
           <div className="form__input-error-message">{errors.signupsfname?.message}</div>
         </div>
         <div className="form__input-group">
+        <label className="form__input-label">Student Last Name</label>
           <input { ...register("signupslname", {
             required: "Student Last name is required"
           })}name="signupslname" type="text" className={`form__input ${errors.signupslname ? "form__input--error" : ""}`} placeholder="Student Last Name" />
           <div className="form__input-error-message">{errors.signupslname?.message}</div>
         </div>
+        </div>
 
         <div className={"form__input-group"}>
+        <label className="form__input-label">Student Grade Level</label>
           <select { ...register("signupgradelvl", {
             required: "Grade level is required"
           })}className= {`form__input ${errors.signupgradelvl ? "form__input--error" : ""}`} name="signupgradelvl" id="gradelvl">

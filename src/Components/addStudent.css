@@ -30,3 +30,13 @@ body{
 .form__button-error:active{
     transform: scale(0.98);
 }
+
+.form__row{
+    display:flex ;
+    gap: 1rem
+}
+
+
+.form__row .form__input-group {
+    flex: 1; 
+}

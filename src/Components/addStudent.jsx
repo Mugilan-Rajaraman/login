@@ -3,7 +3,10 @@ import "./addStudent.css"
 function AddStudent({ id, removeStudent, register, errors }) {
   return (
       <div className="container-addStudent">
+        <hr />
+        <div className="form__row">
           <div className="form__input-group">
+          
               <input {...register(`signupsfname_${id}`, { required: "Student First name is required" })} 
                   type="text" className={`form__input ${errors[`signupsfname_${id}`] ? "form__input--error" : ""}`} 
                   placeholder="Student First Name" />
@@ -16,7 +19,7 @@ function AddStudent({ id, removeStudent, register, errors }) {
                   placeholder="Student Last Name" />
               <div className="form__input-error-message">{errors[`signupslname_${id}`]?.message}</div>
           </div>
-
+          </div>
           <div className="form__input-group">
               <select {...register(`signupgradelvl_${id}`, { required: "Grade level is required" })} 
                   className={`form__input ${errors[`signupgradelvl_${id}`] ? "form__input--error" : ""}`}>
